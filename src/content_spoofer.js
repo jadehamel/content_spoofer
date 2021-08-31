@@ -25,12 +25,11 @@ let Amazonca = class {
       images_list = t_container[t_index].getElementsByTagName("img")
       if (t_index >= 1 && images_list.length >= 1) {
         t_url = images_list[0].src.split("/");
-        debugger;
         fullsize_url = t_url[0] + "//" + t_url[2] + "/" + t_url[3] + "/P/" + product_id + ".01._SX_SCRMZZZZZZZ_V" + t_url[5];
         t_list.push(fullsize_url);
-        console.log(fullsize_url);
       }
     }
+    
     return t_list;
   };
 }
