@@ -14,7 +14,8 @@ let Amazonca = class {
   constructor() {
     this.getthumbs = getthumbs;
   };
-  //Will returns URLs to Alternative products fullsize images
+
+  //Returns an Array of Strings of URLs to fullsize images from alternative thumbs
   getthumbs = function() {
     var t_list = new Array();
     var t_container = document.getElementById("altImages").getElementsByClassName("a-button-text");
@@ -29,7 +30,7 @@ let Amazonca = class {
         t_list.push(fullsize_url);
       }
     }
-    
+
     return t_list;
   };
 }
