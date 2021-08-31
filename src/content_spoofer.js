@@ -15,15 +15,15 @@ let Amazonca = class {
     this.key = ".01._SX_SCRMZZZZZZZ_V";
     this.pathname = window.location.pathname;
     this.product_id = (this.pathname).substring(this.pathname.indexOf("product/") + 8).split("/")[0];
-    this.title = document.title.split(":")[0]
+    this.title = document.title.split(":")[0];
   };
 
-  description = function() {
+  description() {
     return getmeta("description").split(":")[0];
   };
 
   //Returns an Array of Strings of URLs to fullsize images from alternative thumbs
-  getthumbs = function() {
+  getthumbs() {
     var t_list = new Array();
     var t_container = document.getElementById("altImages").getElementsByClassName("a-button-text");
 
@@ -43,7 +43,7 @@ let Amazonca = class {
   //Parameters
   // * name: String - Mandatory (Name of the meta element)*
   //Returns value of meta
-  getmeta = function(name) {
+  getmeta(name) {
     var metas = document.getElementsByTagName("meta");
 
     for (let i = 0; i < metas.length; i++) {
@@ -57,19 +57,17 @@ let Amazonca = class {
   //Parameters
   // * image_url: String - Mandatory *
   //Returns html of an alternavice picture
-  get_html_fs_alt_pics = function(image_url) {
+  get_html_fs_alt_pics(image_url) {
     html_t = "<hr><img src='" + image_url + "'>"
     return html_t;
   };
 
   //Returns the code of an html document with title, description, id and alternative fullsize pictures
-  spoof_to_html = function() {
-    content = new this;
-    content.getthumbs;
+  spoof_to_html() {
+    getthumbs;
     content_html = "<html><head><title>" + title + "</title></head><body><h1>" + + "</h1><br /><h2>" + + "</h2><br /><h3>" + + "</h3>" + get_html_fs_alt_pics + "</body>" + "</html>";
     return content_html;
   };
 };
 
 spoof.amazownca = new Amazonca;
-
